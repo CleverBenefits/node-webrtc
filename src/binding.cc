@@ -24,6 +24,7 @@
 #include "src/interfaces/rtc_sctp_transport.h"
 #include "src/interfaces/rtc_video_sink.h"
 #include "src/interfaces/rtc_video_source.h"
+#include "src/interfaces/rtc_audio_video_source.h"
 #include "src/methods/get_display_media.h"
 #include "src/methods/get_user_media.h"
 #include "src/methods/i420_helpers.h"
@@ -57,6 +58,7 @@ static Napi::Object Init(Napi::Env env, Napi::Object exports) {
   node_webrtc::RTCSctpTransport::Init(env, exports);
   node_webrtc::RTCVideoSink::Init(env, exports);
   node_webrtc::RTCVideoSource::Init(env, exports);
+  node_webrtc::RTCAudioVideoSource::Init(env, exports);
 #ifdef DEBUG
   node_webrtc::Test::Init(env, exports);
 #endif

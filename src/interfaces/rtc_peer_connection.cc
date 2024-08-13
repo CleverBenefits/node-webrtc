@@ -226,7 +226,7 @@ void RTCPeerConnection::OnAddTrack(
     const std::vector<rtc::scoped_refptr<webrtc::MediaStreamInterface>>
         &streams) {
   if (_jinglePeerConnection->GetConfiguration().sdp_semantics !=
-      webrtc::SdpSemantics::kPlanB) {
+      webrtc::SdpSemantics::kUnifiedPlan) {
     return;
   }
   Dispatch(CreateCallback<RTCPeerConnection>([this, receiver, streams]() {
